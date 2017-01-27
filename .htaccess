@@ -1,0 +1,6 @@
+Options -MultiViews
+RewriteEngine On
+
+# Redirect everything else to router.php
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule site/index.html [QSA,L]
