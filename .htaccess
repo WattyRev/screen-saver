@@ -1,6 +1,11 @@
 Options -MultiViews
 RewriteEngine On
 
+# Redirect non-existant file requests to /[FILEPATH] to /site/[FILEPATH]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^.*\..* site/%{REQUEST_URI} [QSA,L]
+
+
 # Redirect everything else to router.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule (.*) site/index.html [QSA,L]
