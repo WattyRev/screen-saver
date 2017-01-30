@@ -9,7 +9,7 @@ The hook.php file allows me to update the site any time this github repository i
 The app is built to potentially support multiple types of screen savers.
 
 ### Videos Page
-The videos page in the application displays embedded videos and loops through them. The embedded videos are listed in videoEmbeds.json.
+The videos page in the application displays embedded videos and loops through them at random. The embedded videos are listed in videoEmbeds.json.
 
 ## Using this repository
 You can fork this repository then upload it to an Apache server that supports PHP. Modify the videoEmbeds.json file to add your own list of video embeds.
