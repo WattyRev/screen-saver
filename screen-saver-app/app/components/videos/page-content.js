@@ -65,5 +65,16 @@ export default Ember.Component.extend({
             return;
         }
         this.set('currentIndex', currentIndex + 1);
-    }
+    },
+
+    /**
+     * Stop the timer when the component is destroyed.
+     *
+     * @method _stopTimer
+     * @return {Void}
+     * @private
+     */
+    _stopTimer: Ember.on('willDestroy', function () {
+        Ember.run.cancel(this.get('_timer'));
+    })
 });
