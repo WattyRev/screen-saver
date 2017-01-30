@@ -47,7 +47,7 @@ export default Ember.Component.extend({
         this.set('_timer', Ember.run.later(() => {
             this._updateIndex();
             this._startTimer();
-        }, this.get('currentVideo.duration') * 60));
+        }, this.get('currentVideo.duration') * 1000));
     }),
 
     /**
