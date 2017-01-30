@@ -1,0 +1,83 @@
+{
+    "excludeFiles": [
+        "node_modules/**",
+        "bower_components/**",
+        "dist",
+        "dist-test",
+        "tmp",
+        "vendor"
+    ],
+    "requireCurlyBraces": ["else", "for", "while", "do"],
+    "requireSpaceAfterKeywords": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "switch",
+        "return"
+    ],
+    "requireSpaceBeforeKeywords": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "switch",
+        "return"
+    ],
+    "requireSpacesInFunctionDeclaration": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "disallowSpacesInFunctionDeclaration": {
+        "beforeOpeningRoundBrace": true
+    },
+    "requireSpacesInNamedFunctionExpression": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "disallowSpacesInNamedFunctionExpression": {
+        "beforeOpeningRoundBrace": true
+    },
+    "requireSpacesInAnonymousFunctionExpression": {
+        "beforeOpeningRoundBrace": true,
+        "beforeOpeningCurlyBrace": true,
+        "allExcept": ["shorthand"]
+    },
+    "jsDoc": {
+        "checkParamNames": true,
+        "checkRedundantParams": true,
+        "requireParamTypes": true
+    },
+    "disallowTrailingComma": true,
+    "requireBlocksOnNewline": true,
+    "requireSpacesInConditionalExpression": true,
+    "requireSpaceBeforeBlockStatements": true,
+    "requireSpacesInForStatement": true,
+    "disallowSpacesInCallExpression": true,
+    "disallowSpacesInsideArrayBrackets": true,
+    "requireSpaceBeforeBinaryOperators": true,
+    "requireSpaceAfterBinaryOperators": true,
+    "requireSpaceBeforeObjectValues": true,
+    "disallowSpaceAfterObjectKeys": true,
+    "requireSpacesInsideObjectBrackets": "all",
+    "disallowSpaceAfterPrefixUnaryOperators": true,
+    "disallowSpaceBeforePostfixUnaryOperators": true,
+    "disallowKeywords": ["with"],
+    "disallowMultipleLineBreaks": true,
+    "disallowKeywordsOnNewLine": [ "else" ],
+    "validateIndentation": 4,
+    "disallowMixedSpacesAndTabs": true,
+    "requireParenthesesAroundIIFE": true,
+    "disallowEmptyBlocks": true,
+    "disallowSpacesInsideParentheses": true,
+    "requireCommaBeforeLineBreak": true,
+    "disallowMultipleLineStrings": true,
+    "requireCapitalizedConstructors": true,
+    "safeContextKeyword": ["self"],
+    "disallowYodaConditions": true,
+    "disallowQuotedKeysInObjects": "allButReserved",
+    "disallowMultipleVarDecl": true,
+    "requireOperatorBeforeLineBreak": true,
+    "requireSpaceAfterLineComment": true,
+    "disallowNewlineBeforeBlockStatements": true
+}
