@@ -6,6 +6,10 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'default-src': "'self' http://slide-show.wattydev.com http://localhost:49154 ws://localhost:49154",
+      'connect-src': "'self' http://slide-show.wattydev.com http://localhost:49154 ws://localhost:49154"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
