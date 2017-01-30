@@ -13,3 +13,5 @@ The videos page in the application displays embedded videos and loops through th
 
 ## Using this repository
 You can fork this repository then upload it to an Apache server that supports PHP. Modify the videoEmbeds.json file to add your own list of video embeds.
+
+The URL for ajax request will need to be updated to point at your site instead of mine. Update screen-saver-app/app/routes/videos to change the request being made on the videos page, then run `npm run build` in the screen-saver-app directory.
