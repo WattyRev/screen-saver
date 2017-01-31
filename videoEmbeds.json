@@ -93,5 +93,10 @@
         "title": "Ylvis - The Fox (What Does the Fox Say)",
         "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jofNR_WkoCE?autoplay=true\" frameborder=\"0\" allowfullscreen volume=\"0\"></iframe>",
         "duration": 225
+    },
+    {
+        "title": "Figure Skating on Top of The World",
+        "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jhnVWWzgNwg?autoplay=true&t=30\" frameborder=\"0\" allowfullscreen volume=\"0\"></iframe>",
+        "duration": 180
     }
 ]
