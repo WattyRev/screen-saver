@@ -1,1 +1,36 @@
-{{{currentVideo.embed}}}
+{{log currentVideo}}
+{{#if (eq currentVideo.type 'youtube')}}
+    {{#if showYoutube}}
+        <div id="muteYouTubeVideoPlayer"></div>
+
+        <script async src="https://www.youtube.com/iframe_api"></script>
+        <script>
+            function onYouTubeIframeAPIReady() {
+                var player;
+                player = new YT.Player('muteYouTubeVideoPlayer', {
+                    videoId: window.youtubeVideoId,
+                    width: 560,
+                    height: 316,
+                    playerVars: {
+                        autoplay: 1,
+                        controls: 0,
+                        showinfo: 0,
+                        modestbranding: 1,
+                        loop: 0,
+                        fs: 0,
+                        cc_load_policy: 0,
+                        iv_load_policy: 3, // Hide the Video Annotations
+                        autohide: 0
+                    },
+                    events: {
+                        onReady: function(e) {
+                            e.target.mute();
+                        }
+                    }
+                });
+            }
+        </script>
+    {{/if}}
+{{else}}
+    {{{currentVideo.embed}}}
+{{/if}}

@@ -24,7 +24,13 @@ export default Ember.Component.extend({
      * @type {Object}
      */
     currentVideo: Ember.computed('currentIndex', 'videos.[]', function () {
-        return this.get('videos')[this.get('currentIndex')];
+        let currentVideo = this.get('videos')[this.get('currentIndex')];
+
+        if (Ember.get(currentVideo, 'type') === 'youtube') {
+            window.youtubeVideoId = Ember.get(currentVideo, 'videoId');
+        }
+
+        return currentVideo;
     }),
 
     /**
@@ -51,6 +57,14 @@ export default Ember.Component.extend({
     }),
 
     /**
+     * Toggle for rendering the youtube shit to the page.
+     *
+     * @property showYoutube
+     * @type {Boolean}
+     */
+    showYoutube: true,
+
+    /**
      * Update the index for the current video.
      *
      * @method _updateIndex
@@ -60,11 +74,19 @@ export default Ember.Component.extend({
     _updateIndex() {
         let maxIndex = this.get('videos.length') - 1;
         let currentIndex = this.get('currentIndex');
+        this.set('showYoutube', false);
+        window.YT = {};
         if (currentIndex === maxIndex) {
-            this.set('currentIndex', 0);
+            Ember.run.later(() => {
+                this.set('currentIndex', 0);
+                this.set('showYoutube', true);
+            }, 1000);
             return;
         }
-        this.set('currentIndex', currentIndex + 1);
+        Ember.run.later(() => {
+            this.set('currentIndex', currentIndex + 1);
+            this.set('showYoutube', true);
+        }, 1000);
     },
 
     /**

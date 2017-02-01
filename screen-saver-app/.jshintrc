@@ -2,7 +2,8 @@
   "predef": [
     "moment",
     "dagre",
-    "d3"
+    "d3",
+    "YT"
   ],
   "undef": true,
   "unused": true,
