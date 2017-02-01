@@ -114,7 +114,8 @@
     },
     {
         "title": "Figure Skating on Top of The World",
-        "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jhnVWWzgNwg?autoplay=true&t=30\" frameborder=\"0\" allowfullscreen volume=\"0\"></iframe>",
+        "type": "youtube",
+        "videoId": "jhnVWWzgNwg",
         "duration": 180
     }
 ]
