@@ -60,12 +60,6 @@
         "duration": 139
     },
     {
-        "title": "Stormtrooper Boosted Board Race",
-        "type": "youtube",
-        "videoId": "JjnZbwpohbw",
-        "duration": 214
-    },
-    {
         "title": "Stormtrooper Twerk",
         "type": "youtube",
         "videoId": "iyqfHvoUtkU",
@@ -117,5 +111,10 @@
         "type": "youtube",
         "videoId": "jofNR_WkoCE",
         "duration": 225
+    },
+    {
+        "title": "Figure Skating on Top of The World",
+        "embed": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/jhnVWWzgNwg?autoplay=true&t=30\" frameborder=\"0\" allowfullscreen volume=\"0\"></iframe>",
+        "duration": 180
     }
 ]
