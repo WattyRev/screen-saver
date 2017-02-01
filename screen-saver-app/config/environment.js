@@ -7,7 +7,7 @@ module.exports = function (environment) {
         baseURL: '/',
         locationType: 'auto',
         contentSecurityPolicy: {
-            'default-src': "'self' http://slide-show.wattydev.com http://localhost:49154 ws://localhost:49154 https://www.youtube.com",
+            'default-src': "'self' http://slide-show.wattydev.com http://localhost:49154 ws://localhost:49154 https://www.youtube.com https://player.vimeo.com",
             'connect-src': "'self' http://slide-show.wattydev.com http://localhost:49154 ws://localhost:49154",
             "script-src": "'self' 'unsafe-eval' 'unsafe-inline' localhost:49154 0.0.0.0:49154 https://www.youtube.com https://s.ytimg.com",
             "style-src": "'self' 'unsafe-inline'"
