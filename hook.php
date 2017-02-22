@@ -7,7 +7,7 @@ $pass = '02065d715fb9adb3c55f1ab852306674';
 
 
 // Defaults
-$projectName = 'WattyDev.com'; // Your project name
+$projectName = 'slide-show.wattydev.com'; // Your project name
 $email		 = 'spencer@wattydev.com'; // Email address you want pull notifcations to go to
 $from        = 'no-reply@wattydev.com'; // Who the email, when called, is sent "from"
 

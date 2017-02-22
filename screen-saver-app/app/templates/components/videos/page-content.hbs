@@ -1,4 +1,3 @@
-{{log currentVideo}}
 {{#if (eq currentVideo.type 'youtube')}}
     {{#if showYoutube}}
         <div id="muteYouTubeVideoPlayer"></div>
@@ -26,6 +25,11 @@
                     events: {
                         onReady: function(e) {
                             e.target.mute();
+                        },
+                        onStateChange: function(e) {
+                            if (e.data === 0) {
+                                $('body').trigger('YouTubeEnded');
+                            }
                         }
                     }
                 });

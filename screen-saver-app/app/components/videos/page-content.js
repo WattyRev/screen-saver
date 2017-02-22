@@ -46,14 +46,27 @@ export default Ember.Component.extend({
      * Start the timer loop.
      *
      * @method _startTimer
-     * @return {Void}
+     * @return {this}
      * @private
      */
     _startTimer: Ember.on('didInsertElement', function () {
         this.set('_timer', Ember.run.later(() => {
-            this._updateIndex();
-            this._startTimer();
+            this._updateIndex()._startTimer();
         }, this.get('currentVideo.duration') * 1000));
+        return this;
+    }),
+
+    /**
+     * Move to the next video when a youtube video is finished.
+     *
+     * @method _watchForYouTubeEnded
+     * @return {this}
+     */
+    _watchForYouTubeEnded: Ember.on('didInsertElement', function () {
+        Ember.$('body').on('YouTubeEnded', () => {
+            this._stopTimer()._updateIndex()._startTimer();
+        });
+        return this;
     }),
 
     /**
@@ -68,7 +81,7 @@ export default Ember.Component.extend({
      * Update the index for the current video.
      *
      * @method _updateIndex
-     * @return {Void}
+     * @return {this}
      * @private
      */
     _updateIndex() {
@@ -81,22 +94,24 @@ export default Ember.Component.extend({
                 this.set('currentIndex', 0);
                 this.set('showYoutube', true);
             }, 1000);
-            return;
+            return this;
         }
         Ember.run.later(() => {
             this.set('currentIndex', currentIndex + 1);
             this.set('showYoutube', true);
         }, 1000);
+        return this;
     },
 
     /**
      * Stop the timer when the component is destroyed.
      *
      * @method _stopTimer
-     * @return {Void}
+     * @return {this}
      * @private
      */
     _stopTimer: Ember.on('willDestroy', function () {
         Ember.run.cancel(this.get('_timer'));
+        return this;
     })
 });
