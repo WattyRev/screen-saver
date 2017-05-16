@@ -8,10 +8,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <base href="/" />
-<meta name="screen-saver-app/config/environment" content="%7B%22modulePrefix%22%3A%22screen-saver-app%22%2C%22environment%22%3A%22production%22%2C%22baseURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%22%27self%27%20http%3A//slide-show.wattydev.com%20http%3A//localhost%3A49154%20ws%3A//localhost%3A49154%20https%3A//www.youtube.com%20https%3A//player.vimeo.com%22%2C%22connect-src%22%3A%22%27self%27%20http%3A//slide-show.wattydev.com%20http%3A//localhost%3A49154%20ws%3A//localhost%3A49154%22%2C%22script-src%22%3A%22%27self%27%20%27unsafe-eval%27%20%27unsafe-inline%27%20localhost%3A49154%200.0.0.0%3A49154%20https%3A//www.youtube.com%20https%3A//s.ytimg.com%22%2C%22style-src%22%3A%22%27self%27%20%27unsafe-inline%27%22%2C%22font-src%22%3A%22%27self%27%22%2C%22img-src%22%3A%22%27self%27%22%2C%22media-src%22%3A%22%27self%27%22%7D%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22screen-saver-app%22%2C%22version%22%3A%220.0.0+1643d547%22%7D%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%2C%22exportApplicationGlobal%22%3Afalse%7D" />
+<meta name="screen-saver-app/config/environment" content="%7B%22modulePrefix%22%3A%22screen-saver-app%22%2C%22environment%22%3A%22production%22%2C%22baseURL%22%3A%22/%22%2C%22locationType%22%3A%22auto%22%2C%22contentSecurityPolicy%22%3A%7B%22default-src%22%3A%22%27self%27%20http%3A//slide-show.wattydev.com%20http%3A//localhost%3A49154%20ws%3A//localhost%3A49154%20https%3A//www.youtube.com%20https%3A//player.vimeo.com%22%2C%22connect-src%22%3A%22%27self%27%20http%3A//slide-show.wattydev.com%20http%3A//localhost%3A49154%20ws%3A//localhost%3A49154%22%2C%22script-src%22%3A%22%27self%27%20%27unsafe-eval%27%20%27unsafe-inline%27%20localhost%3A49154%200.0.0.0%3A49154%20https%3A//www.youtube.com%20https%3A//s.ytimg.com%22%2C%22style-src%22%3A%22%27self%27%20%27unsafe-inline%27%22%2C%22font-src%22%3A%22%27self%27%22%2C%22img-src%22%3A%22%27self%27%22%2C%22media-src%22%3A%22%27self%27%22%7D%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%7D%2C%22APP%22%3A%7B%22name%22%3A%22screen-saver-app%22%2C%22version%22%3A%220.0.0+30de1af3%22%7D%2C%22contentSecurityPolicyHeader%22%3A%22Content-Security-Policy-Report-Only%22%2C%22exportApplicationGlobal%22%3Afalse%7D" />
 
     <link rel="stylesheet" href="assets/vendor-d41d8cd98f00b204e9800998ecf8427e.css" integrity="sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU= sha512-z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg==" >
     <link rel="stylesheet" href="assets/screen-saver-app-af570251835d073543c6a9dfe6e3f09a.css" integrity="sha256-0mBGXYee0g1La0oa4GgfbN+Wz0wFqkZZT2MFNvZpyMY= sha512-KgPPoKCfw58/1NqXbu/Qs1P2idThOYZm95ETOQV6Pwmo7DfEl4wlhjXGdODs01/vkYH324w7e2Yuzp//A48ZmQ==" >
+
+    <!-- Browser Support Warning -->
+    <script type="text/javascript">
+        (function () {
+            // Get the browser's user agent
+            var userAgent = navigator.userAgent.toLowerCase();
+
+            // The HTML to be displayed when the browser is not supported
+            var browserWarningHtml =
+                '<div class="col-xs-10 col-xs-offset-1">' +
+                    '&nbsp;' +
+                    '<h1>Browser Not Supported</h1>' +
+                    '<p>' +
+                        'The browser that you are currently using is not supported. We are unable to confirm the security of your browser, so we must recommend that you upgrade to one of our officially supported browsers:' +
+                    '</p>' +
+                    '<ul>' +
+                        '<li>Google Chrome</li>' +
+                        '<li>Mozilla Firefox</li>' +
+                        '<li>Safari</li>' +
+                        '<li>Microsoft Edge</li>' +
+                        '<li>Internet Explorer 9 or newer</li>' +
+                    '</ul>' +
+                '</div>';
+
+            // An array of regexes that match unsupported browsers
+            var browserBlacklist = [
+                // IE 8 and lower
+                /msie\s[2-8]/
+            ];
+
+            var isUnsupportedBrowser = false;
+
+            // NOTE using for instead of Array.prototype.forEach because we are expecting this to run on old browsers
+            for (var index = 0; index < browserBlacklist.length; index++) {
+                var regex = browserBlacklist[index];
+                if (regex.test(userAgent)) {
+                    isUnsupportedBrowser = true;
+                    break;
+                }
+            }
+
+            // Process for displaying the browser support warning
+            function displayBrowserWarning() {
+                // Output the browser warning
+                document.write(browserWarningHtml);
+
+                // HACK disable the remaining content on the page
+                document.write('<style type="text/undefined">');
+            }
+
+            // Display the warning if necessary
+            if (isUnsupportedBrowser) {
+                displayBrowserWarning();
+            }
+        }());
+    </script>
 
     
   </head>
@@ -19,7 +75,7 @@
     
 
     <script src="assets/vendor-a6c5299503979167db1786b094f3bee7.js"></script>
-    <script src="assets/screen-saver-app-d2f2830f99f2a4d875a59a726ed1a535.js" integrity="sha256-Z71eGooqjMa1XAFw7v0at/ujvRXqa+NqrNP1qhXx9VQ= sha512-Pa//M4TuNqlr2SWLs+l0jPvGXFO4oStE7+L5pCsFZ+rOqzF6Bwj2v0dKsSNJaAAg83IvcJIHerWtB42UcuI5rQ==" ></script>
+    <script src="assets/screen-saver-app-f613fda66dd19cf733a53595c73f84fe.js" integrity="sha256-03fTQEit4kR4DwSf2frN02tSXNqdAuxp8tsH8rmvB1w= sha512-HH1STwdHIX2X56jDhwCUEKaiZHzxOJ7nhuGVSJkDZ3c422MR69WgQZbnMHKRI+xAsCGQmrXbD03vMzWBrf/D/w==" ></script>
 
     
   </body>

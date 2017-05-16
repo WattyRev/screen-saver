@@ -12,6 +12,62 @@
     <link rel="stylesheet" href="assets/vendor.css">
     <link rel="stylesheet" href="assets/screen-saver-app.css">
 
+    <!-- Browser Support Warning -->
+    <script type="text/javascript">
+        (function () {
+            // Get the browser's user agent
+            var userAgent = navigator.userAgent.toLowerCase();
+
+            // The HTML to be displayed when the browser is not supported
+            var browserWarningHtml =
+                '<div class="col-xs-10 col-xs-offset-1">' +
+                    '&nbsp;' +
+                    '<h1>Browser Not Supported</h1>' +
+                    '<p>' +
+                        'The browser that you are currently using is not supported. We are unable to confirm the security of your browser, so we must recommend that you upgrade to one of our officially supported browsers:' +
+                    '</p>' +
+                    '<ul>' +
+                        '<li>Google Chrome</li>' +
+                        '<li>Mozilla Firefox</li>' +
+                        '<li>Safari</li>' +
+                        '<li>Microsoft Edge</li>' +
+                        '<li>Internet Explorer 9 or newer</li>' +
+                    '</ul>' +
+                '</div>';
+
+            // An array of regexes that match unsupported browsers
+            var browserBlacklist = [
+                // IE 8 and lower
+                /msie\s[2-8]/
+            ];
+
+            var isUnsupportedBrowser = false;
+
+            // NOTE using for instead of Array.prototype.forEach because we are expecting this to run on old browsers
+            for (var index = 0; index < browserBlacklist.length; index++) {
+                var regex = browserBlacklist[index];
+                if (regex.test(userAgent)) {
+                    isUnsupportedBrowser = true;
+                    break;
+                }
+            }
+
+            // Process for displaying the browser support warning
+            function displayBrowserWarning() {
+                // Output the browser warning
+                document.write(browserWarningHtml);
+
+                // HACK disable the remaining content on the page
+                document.write('<style type="text/undefined">');
+            }
+
+            // Display the warning if necessary
+            if (isUnsupportedBrowser) {
+                displayBrowserWarning();
+            }
+        }());
+    </script>
+
     {{content-for 'head-footer'}}
   </head>
   <body>
