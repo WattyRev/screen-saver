@@ -156,5 +156,10 @@
         "type": "youtube",
         "videoId": "numaD2pMtN4",
         "duration": 473
+    },
+    {
+        "title": "NYC Layer-Lapse",
+        "embed": "<iframe src=\"https://player.vimeo.com/video/242564489?autoplay=1&background=1\" width=\"640\" height=\"400\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
+        "duration": 161
     }
 ]
