@@ -161,5 +161,11 @@
         "title": "NYC Layer-Lapse",
         "embed": "<iframe src=\"https://player.vimeo.com/video/242564489?autoplay=1&background=1\" width=\"640\" height=\"400\" frameborder=\"0\" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>",
         "duration": 161
-    }
+    },
+    {
+        "title": "Saudi Arabia (Kite Festival)",
+        "type": "youtube",
+        "videoId": "Dw062M_HHys",
+        "duration": 237
+    },
 ]
